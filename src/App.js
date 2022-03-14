@@ -12,9 +12,9 @@ import Location from "./components/Location";
 function App() {
 
 //ResidentInfo
-let [pagenumber, setPageNumber] = useState(1); 
+
 let [fetchedData, updateFetchedData] = useState([]);
-let { info, results } = fetchedData;
+let {  results } = fetchedData;
 
 //searchbox
 let [pageNumber, updatePageNumber] = useState(1);

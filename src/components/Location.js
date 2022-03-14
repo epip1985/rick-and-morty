@@ -5,7 +5,7 @@ import InputGroup from "./InputGroup";
 const Location = () => {
   let [results, setResults] = React.useState([]);
   let [info, setInfo] = useState([]);
-  let { dimension, type, name, residents } = info;
+  let { dimension, type, name, } = info;
   let [number, setNumber] = useState(1);
 
   let api = `https://rickandmortyapi.com/api/location/${number}`;
