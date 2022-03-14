@@ -1,24 +1,62 @@
-import logo from './logo.svg';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap";
+import React, { useState, useEffect } from "react";
+import logo from './logo.gif';
 import './App.css';
 
+//components
+import Search from "./components/Search";
+import ResidentInfo from "./components/ResidentInfo";
+import Location from "./components/Location";
+
 function App() {
+
+//ResidentInfo
+let [pagenumber, setPageNumber] = useState(1); 
+let [fetchedData, updateFetchedData] = useState([]);
+let { info, results } = fetchedData;
+
+//searchbox
+let [pageNumber, updatePageNumber] = useState(1);
+let [search, setSearch] = useState("");
+
+let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
+
+
+
+console.log(results)
+
+useEffect(() => {
+  (async function () {
+    let data = await fetch(api).then((res) => res.json());
+    updateFetchedData(data);
+  })();
+}, [api]);
+
+
+
   return (
+
+    
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <img src={logo}  className="imgLogo" alt="loading..." />
+      <h1 className="text-center mb-3">Rick And Morty Wiki</h1>
+      <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
+      <div className="container">
+        <div className="row">
+      
+      <div className="col-lg-8 col-12">
+        <div className="row">
+        <Location results={results} />
+        <ResidentInfo results={results} />
+
+        </div>
+      </div>
     </div>
+    </div>
+  </div>
   );
 }
 
