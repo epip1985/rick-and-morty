@@ -7,7 +7,7 @@ const Card = ({ results }) => {
     if (results) {
         display = results.map((x) => {
             
-            let { id, image, name, status, location, origin, episode } = x;
+            let { id, image, name, status, origin, episode } = x;
       
           return ( 
             <div
