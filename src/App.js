@@ -40,8 +40,8 @@ useEffect(() => {
     
 
     <div className="App">
-
-      <img src={logo}  className="imgLogo" alt="loading..." />
+        <div className="HeadImg"><img src={logo}  className="imgLogo" alt="loading..." /></div>  
+      
       <h1 className="text-center mb-3">Rick And Morty Wiki</h1>
       <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
       <div className="container">

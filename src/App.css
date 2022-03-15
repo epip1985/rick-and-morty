@@ -9,13 +9,13 @@ body {
   border-color: #20df12;
 }
 
-.btn-primary {
+.btn-primary:hover {
   background-color: #f6f8fa;
   border-color: #f6f8fa;
   color: #212529;
 }
 
-.btn-primary:hover {background-color: #3e8e41}
+
 
 .text-primary {
   color: #20df12;
