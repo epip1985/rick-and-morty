@@ -9,6 +9,7 @@ body {
   border-color: #20df12;
 }
 
+.btn-primary:hover {background-color: #3e8e41}
 .text-primary {
   --bs-text-opacity: 1;
   color: #20df12;
